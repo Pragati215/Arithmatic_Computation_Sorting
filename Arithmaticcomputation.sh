@@ -14,3 +14,7 @@ s3=$((`expr $c+$a/$b`));
 
 echo " s3 - " $s3
 
+s4=$((`expr $a%$b+$c`));
+
+echo " s4 - " $s4
+
