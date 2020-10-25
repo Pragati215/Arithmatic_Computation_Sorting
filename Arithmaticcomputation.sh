@@ -2,6 +2,8 @@
 
 declare -i result
 
+declare -i arr
+
 read -p "enter a b c : " a b c
 
 s1=$(($a+($b*$c)));
@@ -31,6 +33,12 @@ echo "dictionary -" ${!result[@]}
 
 echo "Result in array "${result[@]}
 
+
+echo "dictionary -" ${!arr[@]}
+
+echo "Result in array "${arr[@]}
+
+
 for ((i = 0; i<4; i++)) 
 do
       
@@ -48,4 +56,5 @@ done
   
 echo "Array in sorted order :"
 echo ${arr[*]} 
+
 
