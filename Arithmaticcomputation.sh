@@ -27,3 +27,6 @@ result[((temp++))]="$s3"
 result[((temp))]="$s4"
 
 echo "dictionary -" ${result[@]}
+echo "dictionary -" ${!result[@]}
+
+echo "Result in array "${result[@]}
