@@ -33,6 +33,12 @@ echo "dictionary -" ${!result[@]}
 
 echo "Result in array "${result[@]}
 
+temp=0
+arr[((temp++))]="$s1"
+arr[((temp++))]="$s2"
+arr[((temp++))]="$s3"
+arr[((temp))]="$s4"
+
 
 echo "dictionary -" ${!arr[@]}
 
@@ -54,7 +60,30 @@ do
     done
 done
   
-echo "Array in sorted order :"
+echo "Array in descending order :"
 echo ${arr[*]} 
 
+
+echo "dictionary -" ${!result[@]}
+
+echo "Result in array "${result[@]}
+
+
+for ((i = 0; i<4; i++))
+do
+
+    for((j = 0; j<4-i-1; j++))
+    do
+
+        if [ ${result[j]} -gt ${result[$((j+1))]} ]
+        then
+            temp=${result[j]}
+            result[$j]=${result[$((j+1))]}
+            result[$((j+1))]=$temp
+        fi
+    done
+done
+
+echo "Array in Ascending order :"
+echo ${result[*]}
 
